@@ -3,9 +3,10 @@ let friends = [{name: "Bruno", age: 20}, {name: "Carl", age: 25}, {name: "John",
 let divSelection = d3.select("body")
 .selectAll("div")
 
-divSelection.data(friends)
+divSelection
+  .data(friends)
   .enter()
   .append("div")
-  .text(function (d) {return d.name + d.age + " years old"})
+  .text(function (d) {return d.name + ": " + d.age + " years old"})
   .attr("class", "bar")
-  .style("width", function (d) { return 60 * d.age + "px"})
+  .style("width", function (d) { return 50 * d.age + "px"})
